@@ -8,7 +8,7 @@ __pycache__/
 *.pyo
 
 # Ignorar arquivos de configuração do ambiente virtual
-venv/
+.venv/
 .env
 
 # Ignorar arquivos de saída
