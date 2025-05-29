@@ -12,6 +12,13 @@ Antes de começar, faça o clone do repositório utilizando o seguinte comando:
 git clone https://github.com/LeonardoVideiraSousaPinto/Projeto-RPA.git
 ```
 
+Entre na pasta do projeto
+
+```bash
+cd .\Projeto-RPA\
+```
+
+
 Crie o ambiente virtual
 
 ```bash
