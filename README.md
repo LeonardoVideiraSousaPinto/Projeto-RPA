@@ -31,7 +31,7 @@ Entre no ambiente virtual
 .venv\Scripts\activate.ps1
 ```
 
-Instalar as libs necessarios
+Instalar as libs necessarias
 
 ```bash
 pip install -r requirements.txt
