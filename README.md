@@ -31,6 +31,12 @@ Entre no ambiente virtual
 .venv\Scripts\activate.ps1
 ```
 
+Instalar as libs necessarios
+
+```bash
+pip install -r requirements.txt
+```
+
 ---
 
 ## Projeto 1: Extrair Livros
