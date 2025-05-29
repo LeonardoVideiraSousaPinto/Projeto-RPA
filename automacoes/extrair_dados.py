@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-
+import os
 
 class RaspadorLivros:
     URL_BASE = 'https://books.toscrape.com/'
@@ -60,6 +60,7 @@ class RaspadorLivros:
 
     def salvar_csv(self, nome_arquivo='data/livros.csv'):
         df = pd.DataFrame(self.livros)
+        os.makedirs(os.path.dirname(nome_arquivo), exist_ok=True)
         df.to_csv(nome_arquivo, index=False, encoding='utf-8-sig')
         print(f"Dados salvos em: {nome_arquivo}")
 
