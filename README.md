@@ -12,6 +12,18 @@ Antes de começar, faça o clone do repositório utilizando o seguinte comando:
 git clone https://github.com/LeonardoVideiraSousaPinto/Projeto-RPA.git
 ```
 
+Crie o ambiente virtual
+
+```bash
+python -m venv .venv
+```
+
+Entre no ambiente virtual
+
+```bash
+.venv\Scripts\activate.ps1
+```
+
 ---
 
 ## Projeto 1: Extrair Livros
