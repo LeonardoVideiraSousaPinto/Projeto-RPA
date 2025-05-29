@@ -15,8 +15,8 @@ class RaspadorLivros:
         return BeautifulSoup(resposta.text, 'html.parser')
 
     def obter_categorias(self):
-        sopa = self.obter_dados_bs4('index.html')
-        elementos = sopa.select(
+        soup = self.obter_dados_bs4('index.html')
+        elementos = soup.select(
             '#default > div > div > div > aside > div:nth-of-type(2) > ul > li > ul > li > a'
         )
         return [(el.text.strip(), el['href']) for el in elementos]
@@ -37,9 +37,9 @@ class RaspadorLivros:
         while True:
             partes = url_categoria.split('/')[:-1]
             caminho = '/'.join(partes) + f'/page-{pagina}.html' if pagina > 1 else url_categoria
-            sopa = self.obter_dados_bs4(caminho)
+            soup = self.obter_dados_bs4(caminho)
 
-            livros_html = sopa.select('.product_pod')
+            livros_html = soup.select('.product_pod')
             if not livros_html:
                 break
 
@@ -47,7 +47,7 @@ class RaspadorLivros:
                 livro = self.extrair_info_livro(livro_html, nome_categoria)
                 self.livros.append(livro)
 
-            paginador = sopa.select_one('.current')
+            paginador = soup.select_one('.current')
             if not paginador or pagina >= int(paginador.text.strip().split()[-1]):
                 break
             pagina += 1
